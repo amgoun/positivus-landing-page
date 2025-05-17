@@ -1,6 +1,7 @@
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { FadeIn } from "./animations"
+import Illustraion from '../public/illustration.svg';
 
 export function Hero() {
   return (
@@ -33,7 +34,7 @@ export function Hero() {
                 <div className="relative w-full h-full ">
                   <div className="absolute inset-0 flex items-center justify-center ">
                     <Image
-                      src="/illustration.svg"
+                      src={Illustraion}
                       alt="Digital marketing illustration"
                       width={600.46}
                       height={515}

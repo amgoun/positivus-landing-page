@@ -5,6 +5,7 @@ import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Menu, X } from "lucide-react"
+import Logo from '../public/logo.svg';
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -18,7 +19,7 @@ export function Header() {
       <div className="container mx-auto">
         <div className="flex items-center justify-between">
           <Link href="/" className="flex items-center ">
-            <Image src="/logo.svg" alt="Positivus Logo" width={140} height={32} className=" w-auto" />
+            <Image src={Logo} alt="Positivus Logo" width={140} height={32} className=" w-auto" />
           </Link>
 
           {/* Mobile menu button */}
