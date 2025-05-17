@@ -1,0 +1,232 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+
+    --primary: 240 5.9% 10%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 240 10% 3.9%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 0 0% 98%;
+    --primary-foreground: 240 5.9% 10%;
+
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 240 4.9% 83.9%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  /* Desktop Typography */
+  h1,
+  .h1 {
+    font-size: 60px;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  h2,
+  .h2 {
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  h3,
+  .h3 {
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  h4,
+  .h4 {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.4;
+  }
+
+  p,
+  .p {
+    font-size: 18px;
+    line-height: 1.5;
+  }
+
+  /* Mobile Typography */
+  @media (max-width: 768px) {
+    h1,
+    .h1 {
+      font-size: 43px;
+    }
+
+    h2,
+    .h2 {
+      font-size: 36px;
+    }
+
+    h3,
+    .h3 {
+      font-size: 26px;
+    }
+
+    h4,
+    .h4 {
+      font-size: 18px;
+    }
+
+    p,
+    .p {
+      font-size: 16px;
+      line-height: 24px;
+    }
+  }
+}
+
+@layer components {
+  .section-title {
+    @apply inline-block bg-neon px-4 py-1 font-bold text-dark;
+  }
+
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+  }
+
+  /* Custom rotation classes */
+  .-rotate-25 {
+    transform: rotate(-25deg);
+  }
+
+  .service-card {
+    transition: transform 0.3s ease;
+   
+  }
+
+  .service-card:hover {
+    transform: translateY(-5px);
+  }
+}
+
+/* Testimonial Card Styles */
+.testimonial-card {
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-pointer {
+  position: absolute;
+  bottom: -21px;
+  left: 48px;
+  width: 40px;
+  height: 40px;
+  border-right: 2px solid #B9FF66;
+  border-bottom: 2px solid #B9FF66;
+  transform: rotate(45deg);
+  background-color: rgb(25 26 35 / var(--tw-bg-opacity, 1))
+}
+
+/* Swiper Custom Styles */
+.testimonials-swiper {
+  padding-bottom: 4rem !important;
+}
+
+.testimonials-swiper .swiper-wrapper {
+  height: auto !important;
+}
+
+.testimonials-swiper .swiper-slide {
+  height: auto !important;
+  display: flex;
+  opacity: 0.5;
+  transition: opacity 0.3s ease;
+}
+
+.testimonials-swiper .swiper-slide-active {
+  opacity: 1;
+}
+
+.testimonials-swiper .swiper-pagination {
+  bottom: 0;
+}
+
+.testimonials-swiper .swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  background: white;
+  opacity: 1;
+}
+
+.testimonials-swiper .swiper-pagination-bullet-active {
+  background: #b2ff06 !important;
+}
+
+.testimonials-swiper .swiper-button-prev,
+.testimonials-swiper .swiper-button-next {
+  position: static !important;
+  width: auto !important;
+  height: auto !important;
+  margin-top: 0 !important;
+}
+
+.testimonials-swiper .swiper-button-prev::after,
+.testimonials-swiper .swiper-button-next::after {
+  display: none;
+}
