@@ -1,7 +1,7 @@
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { FadeIn } from "./animations"
-import Illustraion from '../public/illustration.svg';
+import Illustraion from '../public/Illustration.svg';
 
 export function Hero() {
   return (

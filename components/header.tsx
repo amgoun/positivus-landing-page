@@ -5,7 +5,7 @@ import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Menu, X } from "lucide-react"
-import Logo from '../public/logo.svg';
+import Logo from '../public/Logo.svg';
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
