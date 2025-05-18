@@ -1,4 +1,5 @@
 import { FadeIn } from "@/components/animations"
+import { SectionHeader } from "./ui/section-header"
 
 export function SeoProcess() {
   const steps = [
@@ -45,11 +46,11 @@ export function SeoProcess() {
       <div className="container mx-auto">
         <FadeIn>
           <div className="mb-12">
-            <h2 className="inline-block bg-neon px-4 py-1 font-bold text-dark mb-4">How We Work: SEO Process</h2>
-            <p className="text-dark">
-              Our step-by-step SEO process ensures your site is properly optimized, helping increase visibility, drive
-              quality traffic, and boost ranking results.
-            </p>
+            <SectionHeader 
+            title="How We Work: SEO Process"
+            description="Our step-by-step SEO process ensures your site is properly optimized, helping increase visibility, drive
+              quality traffic, and boost ranking results."
+          />
           </div>
         </FadeIn>
 
@@ -60,7 +61,7 @@ export function SeoProcess() {
                 <div className="flex items-start gap-6">
                   <div className="relative">
                     <div className="w-16 h-16 bg-dark rounded-full flex items-center justify-center">
-                      <span className="text-white font-bold">{step.number}</span>
+                      <span className="text-neon font-bold text-2xl">{step.number}</span>
                     </div>
                   </div>
                   <div>

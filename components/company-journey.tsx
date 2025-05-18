@@ -1,6 +1,8 @@
 import { FadeIn } from "@/components/animations"
 import { SectionHeader } from "@/components/ui/section-header"
 import Image from "next/image"
+import RingShape from "@/public/about/ring-shape.svg"
+import BrandIcon from "@/public/brand-icon.svg"
 
 export function CompanyJourney() {
   const milestones = [
@@ -43,16 +45,17 @@ export function CompanyJourney() {
 
         <div className="relative">
           {/* Timeline line */}
+          <FadeIn>
           <div className="absolute left-[7.5rem] top-0 bottom-0 w-px bg-gray-200 hidden md:block"></div>
 
           {/* Decorative circles */}
-          <div className="absolute left-0 top-1/4 transform -translate-y-1/2">
-            <div className="w-32 h-32 border border-gray-200 rounded-full opacity-50"></div>
+          <div className="absolute left-0 top-1/4 transform -translate-y-1/2 rotate-45 hidden lg:block">
+          <Image src={RingShape} alt="check" width={100} height={100} />
           </div>
-          <div className="absolute right-0 bottom-1/4 transform translate-y-1/2">
-            <div className="w-32 h-32 border border-gray-200 rounded-full opacity-50"></div>
+          <div className="absolute right-0 bottom-1/2 transform translate-y-1/2 hidden lg:block ">
+            <Image src={RingShape} alt="check" width={400} height={400} />
           </div>
-
+          </FadeIn>
           <div className="space-y-12 relative z-10">
             {milestones.map((milestone, index) => (
               <FadeIn key={index} delay={0.2 * index}>
@@ -62,7 +65,7 @@ export function CompanyJourney() {
                     <div className="flex items-start gap-4">
                       <div className="p-1 rounded mt-1">
                         <div className="w-5 h-5 flex items-center justify-center">
-                          <Image src="/brand-icon.svg" 
+                          <Image src={BrandIcon} 
                           alt="check"
                            width={20}
                            height={20} />

@@ -19,7 +19,13 @@ export function JoinTeam() {
                   At Positivus, we're always looking for talented individuals to join our team. If you're passionate
                   about digital marketing and want to work with a dynamic, innovative team, we'd love to hear from you!
                 </p>
-                <Button className="bg-dark text-white hover:bg-dark/90">Explore Careers</Button>
+                <Button
+              variant="outline"
+              className=" font-normal text-xl px-[30px] py-[25px] border-dark bg-dark text-white
+               hover:bg-white hover:text-dark transition-colors rounded-[14px] w-full md:w-auto "
+            >
+              Explore Careers
+            </Button>
               </div>
               <div className="relative h-[200px] md:h-[250px]">
                 <Image src="/about/about-illustration-4.png" alt="Join our team" fill className="object-contain" />

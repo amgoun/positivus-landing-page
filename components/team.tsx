@@ -2,6 +2,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { SectionHeader } from "./ui/section-header"
 import { Button } from "./ui/button"
+import { FadeIn } from "@/components/animations"
 
 export function Team() {
   const teamMembers = [
@@ -52,61 +53,66 @@ export function Team() {
   return (
     <section className="w-full py-16 px-4 md:px-8 lg:px-16">
       <div className="container mx-auto">
-        <SectionHeader 
-          title="Team"
-          description="Meet the skilled and experienced team behind our successful digital marketing strategies"
-        />
+        <FadeIn>
+          <SectionHeader 
+            title="Team"
+            description="Meet the skilled and experienced team behind our successful digital marketing strategies"
+          />
+        </FadeIn>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {teamMembers.map((member, index) => (
-            <div 
-              key={index} 
-              className="bg-white rounded-[32px] p-8 border-2 border-dark/50"
-              style={{
-                boxShadow: "0 4px 0 0 #191A23",
-              }}
-            >
-              <div className="flex justify-between items-start mb-6">
-                <div className="flex items-center gap-4">
-                  <div className="relative">
-                    <div className="w-[72px] h-[72px] relative">
-                      <Image 
-                        src={member.image} 
-                        alt={member.name} 
-                        fill
-                        className="object-cover"
-                      />
+            <FadeIn key={index} delay={0.1 * (index + 1)}>
+              <div 
+                className="bg-white rounded-[32px] p-8 border-2 border-dark/50"
+                style={{
+                  boxShadow: "0 4px 0 0 #191A23",
+                }}
+              >
+                <div className="flex justify-between items-start mb-6">
+                  <div className="flex items-center gap-4">
+                    <div className="relative">
+                      <div className="w-[72px] h-[72px] relative">
+                        <Image 
+                          src={member.image} 
+                          alt={member.name} 
+                          fill
+                          className="object-cover"
+                        />
+                      </div>
+                      <div className="absolute inset-0 rounded-[20px]" />
                     </div>
-                    <div className="absolute inset-0 rounded-[20px]" />
+                    <div>
+                      <h3 className="text-xl font-bold">{member.name}</h3>
+                      <p className="text-dark/80">{member.role}</p>
+                    </div>
                   </div>
-                  <div>
-                    <h3 className="text-xl font-bold">{member.name}</h3>
-                    <p className="text-dark/80">{member.role}</p>
-                  </div>
+                  <Link href={member.linkedin} target="_blank" className="shrink-0">
+                    <Image 
+                      src="/team/linkdin_icon.svg" 
+                      alt="LinkedIn" 
+                      width={32} 
+                      height={32}
+                    />
+                  </Link>
                 </div>
-                <Link href={member.linkedin} target="_blank" className="shrink-0">
-                  <Image 
-                    src="/team/linkdin_icon.svg" 
-                    alt="LinkedIn" 
-                    width={32} 
-                    height={32}
-                  />
-                </Link>
+                <div className="h-px bg-dark/20 mb-6" />
+                <p className="text-dark/80 leading-relaxed">{member.description}</p>
               </div>
-              <div className="h-px bg-dark/20 mb-6" />
-              <p className="text-dark/80 leading-relaxed">{member.description}</p>
-            </div>
+            </FadeIn>
           ))}
         </div>
-        <div className="flex justify-center lg:justify-end mt-8">
-        <Button
+        <FadeIn delay={0.7}>
+          <div className="flex justify-center lg:justify-end mt-8">
+            <Button
               variant="outline"
               className=" font-normal text-xl px-[30px] py-[25px] border-dark bg-dark text-white
                hover:bg-white hover:text-dark transition-colors rounded-[14px] w-full md:w-auto "
             >
               See all team
             </Button>
-        </div>
+          </div>
+        </FadeIn>
       </div>
     </section>
   )

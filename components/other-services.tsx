@@ -2,6 +2,7 @@ import Link from "next/link"
 import Image from "next/image"
 import { ArrowRight } from "lucide-react"
 import { FadeIn } from "@/components/animations"
+import { SectionHeader } from "./ui/section-header"
 
 export function OtherServices() {
   const services = [
@@ -48,11 +49,10 @@ export function OtherServices() {
       <div className="container mx-auto">
         <FadeIn>
           <div className="mb-12">
-            <h2 className="inline-block bg-neon px-4 py-1 font-bold text-dark mb-4">Our Other Services</h2>
-            <p className="text-dark">
-              As a full-service marketing agency, we offer a range of services to help businesses grow their online
-              presence and achieve their goals.
-            </p>
+            <SectionHeader 
+            title="Other Services"
+            description="Explore Our Comprehensive Range of Digital Marketing Services"
+          />
           </div>
         </FadeIn>
 

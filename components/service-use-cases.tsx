@@ -1,6 +1,7 @@
 import Link from "next/link"
 import { ArrowRight } from "lucide-react"
 import { FadeIn } from "@/components/animations"
+import { SectionHeader } from "./ui/section-header"
 
 export function ServiceUseCases() {
   const useCases = [
@@ -29,12 +30,14 @@ export function ServiceUseCases() {
       <div className="container mx-auto">
         <FadeIn>
           <div className="mb-8">
-            <h2 className="inline-block bg-neon px-4 py-1 font-bold text-dark mb-4">Use Cases</h2>
-            <p className="text-dark">Explore Real-Life Examples of Our Proven Digital Marketing Success</p>
+              <SectionHeader 
+            title="Case Studies"
+            description="Explore Real-Life Examples of Our Proven Digital Marketing Success through Our Case Studies"
+          />
           </div>
         </FadeIn>
 
-        <div className="bg-dark text-white p-8 rounded-lg">
+        <div className="bg-dark text-white p-12 rounded-[45px]">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {useCases.map((useCase, index) => (
               <FadeIn key={index} delay={0.1 * index}>
