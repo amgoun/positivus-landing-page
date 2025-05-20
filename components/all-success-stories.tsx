@@ -1,6 +1,7 @@
 import Link from "next/link"
 import { ArrowRight } from "lucide-react"
 import { FadeIn } from "@/components/animations"
+import { SectionHeader } from "./ui/section-header"
 
 export function AllSuccessStories() {
   const successStories = [
@@ -47,10 +48,10 @@ export function AllSuccessStories() {
       <div className="container mx-auto">
         <FadeIn>
           <div className="mb-12">
-            <h2 className="inline-block bg-neon px-4 py-1 font-bold text-dark mb-4">All Success Stories</h2>
-            <p className="text-dark">
-              Explore Real-Life Examples of Our Proven Digital Marketing Success through Our Case Studies
-            </p>
+            <SectionHeader title="All Success Stories" 
+            description="Explore Real-Life Examples of Our Proven Digital Marketing Success through Our Case Studies"
+            />  
+
           </div>
         </FadeIn>
 

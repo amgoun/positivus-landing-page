@@ -3,14 +3,14 @@ import { FadeIn } from "@/components/animations"
 
 export function UseCasesHero() {
   return (
-    <section className="w-full py-12 md:py-24 px-4 md:px-8 lg:px-16 bg-light">
+    <section className="w-full py-12 md:py-24 px-4 md:px-8 lg:px-16  bg-light container mx-auto rounded-[45px] mt-12">
       <div className="container mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
           <div className="relative h-[300px] md:h-[400px] order-2 lg:order-1">
             <div className="absolute inset-0">
               <div className="relative w-full h-full">
                 <Image
-                  src="/images/use-cases-illustration.svg"
+                  src="/use-case/use-case-illustration.png"
                   alt="Digital marketing success illustration"
                   width={400}
                   height={400}

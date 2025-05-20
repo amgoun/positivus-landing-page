@@ -45,27 +45,37 @@ export function PricingFaq() {
       <div className="container mx-auto">
         <FadeIn>
           <div className="mb-12">
-            <h2 className="inline-block bg-neon px-4 py-1 font-bold text-dark mb-4">Frequantly Asked Questions</h2>
+            <h2 className="inline-block bg-neon px-4 py-1 font-bold text-dark rounded-[14px]">Frequently Asked Questions</h2>
           </div>
         </FadeIn>
 
-        <div className="space-y-4">
+        <div className="space-y-6">
           {faqs.map((faq, index) => (
             <FadeIn key={index} delay={0.1 * index}>
-              <div className={`rounded-lg overflow-hidden ${index === openIndex ? "bg-neon" : "bg-light"}`}>
+              <div 
+                className={`${
+                  index === openIndex ? 'bg-neon' : 'bg-[#F5F5F5]'
+                } rounded-[32px] border-2 border-dark/50 transition-all duration-300`}
+                style={{
+                  boxShadow: "0 4px 0 0 #191A23",
+                }}
+              >
                 <button
-                  className="w-full px-6 py-4 text-left flex items-center justify-between focus:outline-none"
+                  className="w-full p-8 flex items-center justify-between text-left"
                   onClick={() => setOpenIndex(index === openIndex ? -1 : index)}
                 >
-                  <span className="font-medium">{faq.question}</span>
-                  <span className="ml-6 flex-shrink-0">
-                    {index === openIndex ? <Minus className="h-5 w-5" /> : <Plus className="h-5 w-5" />}
+                  <span className="font-bold text-xl">{faq.question}</span>
+                  <span className="bg-white rounded-full p-2 border-dark border flex-shrink-0">
+                    {index === openIndex ? <Minus className="h-6 w-6" /> : <Plus className="h-6 w-6" />}
                   </span>
                 </button>
                 {index === openIndex && (
-                  <div className="px-6 pb-4">
-                    <p className="text-gray-600">{faq.answer}</p>
-                  </div>
+                  <>
+                    <div className="h-px bg-dark/20 mx-8" />
+                    <div className="px-8 pb-8 mt-4">
+                      <p className="text-lg leading-relaxed">{faq.answer}</p>
+                    </div>
+                  </>
                 )}
               </div>
             </FadeIn>

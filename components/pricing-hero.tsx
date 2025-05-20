@@ -8,7 +8,7 @@ export function PricingHero() {
           <div className="max-w-3xl">
             <h1 className="text-dark mb-4">Pricing</h1>
             <p className="text-dark text-xl">
-              Elevate Your Online Presence: Competitive Pricing for Exceptional Results
+              Elevate Your Online Presence: Competitive Pricing <br /> for Exceptional Results
             </p>
           </div>
         </FadeIn>

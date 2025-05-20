@@ -1,5 +1,7 @@
 import { FadeIn } from "@/components/animations"
 import Image from "next/image"
+import Illustration from "@/public/illustration.svg"
+
 
 export function BlogHero() {
   return (
@@ -12,7 +14,7 @@ export function BlogHero() {
                 <div className="absolute inset-0">
                   <div className="relative w-full h-full">               
                     <Image
-                      src="/illustration.svg"
+                      src={Illustration}
                       alt="Digital marketing illustration"
                       fill
                       className="object-contain "

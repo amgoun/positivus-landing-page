@@ -4,7 +4,7 @@ import { useState, useEffect } from "react"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 import { motion, AnimatePresence } from "framer-motion"
 import { FadeIn } from "@/components/animations"
-
+import { SectionHeader } from "./ui/section-header"
 export function TestimonialsCarousel() {
   const testimonials = [
     {
@@ -51,7 +51,7 @@ export function TestimonialsCarousel() {
   // Animation variants
   const variants = {
     enter: (direction: number) => ({
-      x: direction > 0 ? 1000 : -1000,
+      x: direction > 0 ? 300 : -300,
       opacity: 0,
     }),
     center: {
@@ -59,7 +59,7 @@ export function TestimonialsCarousel() {
       opacity: 1,
     },
     exit: (direction: number) => ({
-      x: direction < 0 ? 1000 : -1000,
+      x: direction < 0 ? 300 : -300,
       opacity: 0,
     }),
   }
@@ -69,15 +69,13 @@ export function TestimonialsCarousel() {
       <div className="container mx-auto">
         <FadeIn>
           <div className="mb-12">
-            <h2 className="inline-block bg-neon px-4 py-1 font-bold text-dark mb-4">Testimonials</h2>
-            <p className="text-dark">
-              Hear from Our Satisfied Clients: Read Our Testimonials to Learn More about Our Digital Marketing Services
-            </p>
+            <SectionHeader title="Testimonials" 
+            description="Hear from Our Satisfied Clients: Read Our Testimonials to Learn More about Our Digital Marketing Services" />
           </div>
         </FadeIn>
 
-        <div className="bg-dark text-white p-8 md:p-12 rounded-lg">
-          <div className="relative min-h-[200px]">
+        <div className="bg-dark text-white p-8 md:p-12 rounded-[45px]">
+          <div className="relative min-h-[200px] overflow-hidden">
             <AnimatePresence initial={false} custom={direction} mode="wait">
               <motion.div
                 key={currentIndex}

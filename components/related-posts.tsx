@@ -1,6 +1,7 @@
 import { FadeIn } from "@/components/animations"
 import Link from "next/link"
 import { ArrowRight } from "lucide-react"
+import { SectionTitle } from "./section-title"
 
 export function RelatedPosts() {
   const posts = [
@@ -37,7 +38,7 @@ export function RelatedPosts() {
   ]
 
   return (
-    <section className="w-full py-16 px-4 md:px-8 lg:px-16 bg-light">
+    <section className="container mx-auto rounded-[45px] py-16 px-4  mb-8 md:px-8 lg:px-16 bg-light">
       <div className="container mx-auto">
         <FadeIn>
           <div className="mb-12">
@@ -47,6 +48,7 @@ export function RelatedPosts() {
             <p className="text-dark max-w-lg">
               Discover insights into strategies and trends to keep you ahead in the digital marketing world.
             </p>
+            
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
