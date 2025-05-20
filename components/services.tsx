@@ -1,52 +1,50 @@
-import Link from "next/link"
-import Image from "next/image"
-import { ArrowRight } from "lucide-react"
 import { SectionHeader } from "@/components/ui/section-header"
 import { FadeIn } from "@/components/animations"
+import { CustomCard } from "@/components/ui/custom-card"
 
 export function Services() {
   const services = [
     {
-      title: "Search engine\noptimization",
-      description: "",
+      title: "Search engine\\noptimization",
       color: "bg-white",
       textColor: "text-dark",
       icon: "/services/search.png",
+      link: "/services/seo",
     },
     {
-      title: "Pay-per-click\nadvertising",
-      description: "",
+      title: "Pay-per-click\\nadvertising",
       color: "bg-neon",
       textColor: "text-dark",
       icon: "/services/click.png",
+      link: "/services/ppc",
     },
     {
-      title: "Social Media\nMarketing",
-      description: "",
+      title: "Social Media\\nMarketing",
       color: "bg-dark",
       textColor: "text-white",
       icon: "/services/social.png",
+      link: "/services/social-media",
     },
     {
-      title: "Email\nMarketing",
-      description: "",
+      title: "Email\\nMarketing",
       color: "bg-light",
       textColor: "text-dark",
       icon: "/services/email.png",
+      link: "/services/email",
     },
     {
-      title: "Content\nCreation",
-      description: "",
+      title: "Content\\nCreation",
       color: "bg-neon",
       textColor: "text-dark",
       icon: "/services/content.png",
+      link: "/services/content",
     },
     {
-      title: "Analytics and\nTracking",
-      description: "",
+      title: "Analytics and\\nTracking",
       color: "bg-dark",
       textColor: "text-white",
       icon: "/services/analytic.png",
+      link: "/services/analytics",
     },
   ]
 
@@ -63,46 +61,10 @@ export function Services() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {services.map((service, index) => (
             <FadeIn key={index} delay={0.1 * (index + 1)}>
-              <div
-                className={`${service.color} ${service.textColor} rounded-lg p-6 flex flex-col relative overflow-hidden border-2 border-dark/50 service-card`}
-                style={{
-                  boxShadow: "0 4px 0 0 #191A23",
-                }}
-              >
-                <div className="flex flex-col h-full">
-                  <div className="flex justify-between h-full">
-                    <div className="flex flex-col justify-between h-full">
-                      <div className="mb-8">
-                        {service.title.split('\n').map((part, i) => (
-                          <div key={i} className="mb-[-0.25rem]">
-                            <span className={`inline-block ${service.color === 'bg-neon' || service.color === 'bg-dark' ? 'bg-white' : 'bg-neon'} px-3 py-1 text-3xl font-bold text-dark rounded-md`}>{part}</span>
-                          </div>
-                        ))}
-                      </div>
-
-                      <Link
-                        href={`/services/${service.title.toLowerCase().replace(/\s+/g, "-").replace(/\n/g, "-")}`}
-                        className="flex items-center gap-2 font-medium group"
-                      >
-                        <span className={`w-10 h-10 rounded-full ${service.color === 'bg-dark' ? 'bg-white text-dark' : 'bg-dark text-white'} flex items-center justify-center group-hover:bg-neon group-hover:text-dark transition-colors duration-300`}>
-                          <ArrowRight className="h-5 w-5 rotate-[-45deg] group-hover:rotate-0 transition-transform duration-300" />
-                        </span>
-                        <span className={service.color === 'bg-dark' ? 'text-white' : ''}>Learn more</span>
-                      </Link>
-                    </div>
-
-                    <div className="relative w-32 h-32 self-end flex items-center justify-center">
-                      <Image
-                        src={service.icon || "/placeholder.svg"}
-                        alt={service.title}
-                        width={150}
-                        height={150}
-                        className="object-contain w-full h-full"
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <CustomCard
+                {...service}
+                className="service-card"
+              />
             </FadeIn>
           ))}
         </div>
