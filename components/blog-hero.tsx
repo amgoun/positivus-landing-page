@@ -1,6 +1,6 @@
 import { FadeIn } from "@/components/animations"
 import Image from "next/image"
-import Illustration from "@/public/illustration.svg"
+import Illustration from "@/public/Illustration.svg"
 
 
 export function BlogHero() {
